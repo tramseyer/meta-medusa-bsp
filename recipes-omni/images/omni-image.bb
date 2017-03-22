@@ -16,8 +16,7 @@ inherit core-image
 SUMMARY = ""
 DESCRIPTION = "Custom OMNI image"
 LICENCE = "MIT"
-IMAGE_INSTALL_append = " barebox usbutils bash copy2rootfs zile i2c-tools tree \
-						 minicom fbtest protobuf sqlite3 gtest can-utils gawk \
-						 grep htop nano sed tar tcf-agent util-linux vim ppp wvdial"
+IMAGE_INSTALL_append = " barebox usbutils bash copy2rootfs i2c-tools tree \
+						 fbtest"
 
 IMAGE_FSTYPES = "tar.gz ubifs"

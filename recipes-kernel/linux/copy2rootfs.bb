@@ -2,6 +2,8 @@ SUMMARY = "Copy file to Root FS"
 DESCRIPTION = "Recipe for copying files from meta-omni layer into root file system"
 LICENSE = "CLOSED"
 
+RDEPENDS_${PN} = "bash"
+
 FILESEXTRAPATHS_append := "${THISDIR}/linux-mainline:"
 
 SRC_URI = "file://chip-init \
