@@ -159,7 +159,7 @@
 
 	/* Touch controller */
 	ili2116@41 {
-		compatible = "omni-ili2116";
+		compatible = "stromer-ili2116";
 		reg = <0x41>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_ili2116>;
