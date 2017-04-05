@@ -66,6 +66,11 @@ start)
 	echo "120" > /sys/class/gpio/export
 	echo "out" > /sys/class/gpio/gpio120/direction
 	echo "1" > /sys/class/gpio/gpio120/value
+    
+    # 5V_ON
+	echo "496" > /sys/class/gpio/export
+	echo "out" > /sys/class/gpio/gpio496/direction
+	echo "1" > /sys/class/gpio/gpio496/value
 ;;
 
 stop)
