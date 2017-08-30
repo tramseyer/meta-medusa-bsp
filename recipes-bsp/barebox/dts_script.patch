@@ -1,8 +1,8 @@
-diff --git a/arch/arm/dts/imx6ul-phytec-phycore-som.dts b/arch/arm/dts/imx6ul-phytec-phycore-som.dts
-index 65a9365..f16ea96 100644
---- a/arch/arm/dts/imx6ul-phytec-phycore-som.dts
-+++ b/arch/arm/dts/imx6ul-phytec-phycore-som.dts
-@@ -33,6 +33,72 @@
+diff --git a/arch/arm/dts/imx6ul-phytec-phycore-som.dtsi b/arch/arm/dts/imx6ul-phytec-phycore-som.dtsi
+index cf565d7c1..c717495b3 100644
+--- a/arch/arm/dts/imx6ul-phytec-phycore-som.dtsi
++++ b/arch/arm/dts/imx6ul-phytec-phycore-som.dtsi
+@@ -26,6 +26,72 @@
  			status = "disabled";
  		};
  	};
@@ -75,9 +75,9 @@ index 65a9365..f16ea96 100644
  };
  
  &fec1 {
-@@ -84,12 +150,27 @@
+@@ -77,12 +143,27 @@
  	clock-frequency = <100000>;
- 	status = "okay";
+ 	status = "disabled";
  
 -	eeprom@52 {
 +	eeprom: eeprom@52 { /* EEPROM identification page (32 byte)*/
@@ -101,10 +101,10 @@ index 65a9365..f16ea96 100644
 +	status = "okay";
 +};
 +
- &uart1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_uart1>;
-@@ -116,70 +197,110 @@
+ &ocotp {
+ 	barebox,provide-mac-address = <&fec1 0x620>,
+ 					<&fec2 0x632>;
+@@ -120,70 +201,110 @@
  	};
  };
  
@@ -136,7 +136,7 @@ index 65a9365..f16ea96 100644
 -				MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1	0x4001b031
 -			>;
 -		};
-+	pinctrl-name = "default";
++	pinctrl-names = "default";
  
 -		pinctrl_gpmi_nand: gpminandgrp {
 -			fsl,pins = <
@@ -276,7 +276,7 @@ index 65a9365..f16ea96 100644
  	};
  };
 diff --git a/defaultenv/defaultenv-2-base/bin/init b/defaultenv/defaultenv-2-base/bin/init
-index 7af3c7d..a3e63d9 100644
+index 7af3c7d95..a3e63d97e 100644
 --- a/defaultenv/defaultenv-2-base/bin/init
 +++ b/defaultenv/defaultenv-2-base/bin/init
 @@ -1,5 +1,14 @@
